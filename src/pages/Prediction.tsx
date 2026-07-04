@@ -158,7 +158,7 @@ export default function Prediction() {
                         cursor={{ fill: 'hsl(220 30% 15%)', opacity: 0.4 }}
                       />
                       <Bar dataKey="value" radius={[0, 4, 4, 0]}>
-                        {result.shap_values.map((entry: any, index: number) => (
+                        {result.shap_values.map((_: any, index: number) => (
                           <Cell key={`cell-${index}`} fill="hsl(190 90% 50%)" />
                         ))}
                       </Bar>

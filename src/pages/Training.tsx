@@ -55,8 +55,8 @@ export default function Training() {
         setLogs(prev => [{
           id: Math.random().toString(),
           time: new Date().toLocaleTimeString(),
-          message: data.log,
-          type: 'info'
+          message: String(data.log),
+          type: 'info' as const
         }, ...prev].slice(0, 15));
       }
       
@@ -131,7 +131,7 @@ export default function Training() {
         <div className="col-span-3 flex flex-col gap-6 pt-4 overflow-y-auto pr-2 max-h-[70vh]">
           {loadingInitial ? (
              <div className="animate-pulse flex space-x-4"><div className="h-20 w-full bg-slate-800 rounded"></div></div>
-          ) : hospitals.map((hospital, idx) => (
+          ) : hospitals.map((hospital) => (
             <div key={hospital.id} className="relative bg-slate-900/60 backdrop-blur-md border border-slate-800 rounded-xl p-5 shadow-2xl">
               {isTrainingPhase && (
                 <div className="absolute inset-0 border-2 border-primary rounded-xl animate-pulse" />
